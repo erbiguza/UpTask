@@ -1,0 +1,55 @@
+.card {
+    display: flex;
+    height: 120px;
+    align-items: center;
+    min-width: 300px;
+    flex: 1;
+    border-radius: 4px;
+
+    color: white;
+
+    .img-container {
+        width: 30%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+
+        img {
+            width: 40%;
+            height: auto;
+            filter: invert(1);
+        }
+    }
+}
+
+.completed {
+    background-color: var(--color-success);
+}
+
+.pending {
+    background-color: var(--color-pending);
+}
+
+.overdue {
+    background-color: var(--color-danger);
+}
+
+@media (max-width: 768px) {
+    .card {
+        height: 70px;
+
+        .img-container {
+            width: 20%;
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+
+        h4 {
+            font-size: 15px;
+        }
+    }
+}
