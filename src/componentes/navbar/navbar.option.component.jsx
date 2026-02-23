@@ -1,4 +1,4 @@
-import "./sidebar.option.styles.scss";
+import "./navbar.option.styles.scss";
 
 function SidebarOption({ content, isActive, onClick, icon }) {
     let clsName = "side-option ";

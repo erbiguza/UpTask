@@ -1,9 +1,9 @@
-import "./sidebar.styles.scss";
+import "./navbar.styles.scss";
 import logout from "../../assets/images/icons/logout.png";
 
 import { useState } from "react";
 
-import SidebarOption from "./sidebar.option.component";
+import SidebarOption from "./navbar.option.component.jsx";
 import { options } from "../../config/navlinks.js";
 
 function Sidebar() {

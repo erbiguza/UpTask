@@ -1,5 +1,5 @@
 import Header from "./componentes/header/header.component";
-import Sidebar from "./componentes/sidebar/sidebar.component";
+import Navbar from "./componentes/navbar/navbar.component";
 
 import "./App.css";
 
@@ -7,7 +7,7 @@ function App() {
     return (
         <>
             <Header />
-            <Sidebar />
+            <Navbar />
         </>
     );
 }
