@@ -1,0 +1,12 @@
+.content {
+    margin-top: 110px;
+    margin-left: 235px;
+}
+
+@media (max-width: 768px) {
+    .content {
+        margin-top: 75px;
+        margin-left: 0;
+        margin-bottom: 60px;
+    }
+}

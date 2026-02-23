@@ -5,7 +5,7 @@ import tasks from "../assets/images/icons/tasks.png";
 
 export const options = [
     { name: "Dashboard", icon: home, path: "/" },
-    { name: "My Tasks", icon: tasks, path: "/mytasks" },
+    { name: "My Tasks", icon: tasks, path: "/tasks" },
     { name: "Calendar", icon: calendar, path: "/calendar" },
     { name: "Settings", icon: settings, path: "/settings" },
 ];

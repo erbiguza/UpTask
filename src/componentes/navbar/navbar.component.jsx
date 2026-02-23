@@ -2,12 +2,14 @@ import "./navbar.styles.scss";
 import logout from "../../assets/images/icons/logout.png";
 
 import { useState } from "react";
+import { useNavigate } from "react-router";
 
 import SidebarOption from "./navbar.option.component.jsx";
 import { options } from "../../config/navlinks.js";
 
 function Sidebar() {
     const [active, setActive] = useState("Dashboard");
+    const navigate = useNavigate();
 
     return (
         <div className="sidebar-container">
@@ -17,7 +19,10 @@ function Sidebar() {
                     content={option.name}
                     isActive={active === option.name}
                     icon={option.icon}
-                    onClick={() => setActive(option.name)}
+                    onClick={() => {
+                        navigate(option.path);
+                        setActive(option.name);
+                    }}
                 />
             ))}
             <div className="logout-btn">
