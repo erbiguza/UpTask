@@ -1,11 +1,11 @@
 .content {
-    margin-top: 100px;
-    margin-left: 225px;
+    margin-top: 75px;
+    margin-left: 200px;
 }
 
 @media (max-width: 768px) {
     .content {
-        margin-top: 70px;
+        margin-top: 55px;
         margin-left: 0;
         margin-bottom: 55px;
     }

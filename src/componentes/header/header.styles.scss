@@ -1,7 +1,7 @@
 header {
     width: 100vw;
     padding: 0;
-    height: 100px;
+    height: 75px;
     background-color: var(--color-sidebar);
     overflow: hidden;
     border: 1px solid rgba(0, 0, 0, 0.07);
@@ -21,7 +21,7 @@ header {
         cursor: pointer;
 
         img {
-            width: 150px;
+            width: 130px;
             height: auto;
         }
     }
@@ -44,7 +44,7 @@ header {
             cursor: pointer;
 
             img {
-                width: 58px;
+                width: 48px;
                 height: auto;
                 margin-right: 12px;
             }
@@ -67,7 +67,7 @@ header {
             cursor: pointer;
 
             img {
-                width: 30px;
+                width: 25px;
                 height: auto;
                 filter: invert(1);
             }
@@ -77,25 +77,29 @@ header {
 
 @media (max-width: 768px) {
     header {
-        height: 70px;
+        height: 55px;
 
         .logo-container {
             margin-top: 3px;
 
             img {
-                width: 110px;
+                width: 90px;
             }
         }
 
         .right-side {
             .profile-container {
                 img {
-                    width: 40px;
+                    width: 30px;
                 }
 
                 .username {
-                    font-size: 18px;
+                    font-size: 16px;
                 }
+            }
+
+            .view-mode img {
+                width: 20px;
             }
         }
     }
