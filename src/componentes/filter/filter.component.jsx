@@ -9,24 +9,24 @@ function Filter() {
     return (
         <div className="filter-container">
             <FilterOption
-                option={"Completed"}
-                isActive={active === "Completed"}
+                option={"Low"}
+                isActive={active === "Low"}
                 onClick={() => {
-                    setActive("Completed");
+                    setActive("Low");
                 }}
             />
             <FilterOption
-                option={"Pending"}
-                isActive={active === "Pending"}
+                option={"Medium"}
+                isActive={active === "Medium"}
                 onClick={() => {
-                    setActive("Pending");
+                    setActive("Medium");
                 }}
             />
             <FilterOption
-                option={"Overdue"}
-                isActive={active === "Overdue"}
+                option={"High"}
+                isActive={active === "High"}
                 onClick={() => {
-                    setActive("Overdue");
+                    setActive("High");
                 }}
             />
             <FilterOption

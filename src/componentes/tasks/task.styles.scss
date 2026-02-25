@@ -1,0 +1,84 @@
+.task-container {
+    display: flex;
+    width: calc(100%);
+    min-height: 60px;
+    height: auto;
+    flex-direction: column;
+    background-color: rgb(var(--color-card));
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    color: rgb(var(--color-text-secondary));
+
+    .row {
+        display: flex;
+
+        flex-direction: row;
+        align-items: center;
+
+        padding: 0px 20px;
+        margin-bottom: 7px;
+
+        .description {
+            width: 45%;
+            height: auto;
+            margin-right: 7px;
+            p {
+                white-space: normal;
+                word-break: break-word;
+            }
+        }
+
+        .prio-box {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-top: 5px;
+            height: 30px;
+            width: 70px;
+            color: white;
+        }
+    }
+
+    button {
+        width: 70px;
+        height: 100%;
+        border: none;
+        border-radius: 4px;
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+}
+
+.row.buttons {
+    margin-top: auto;
+    justify-content: space-between;
+    height: 30px;
+}
+
+.done {
+    background-color: rgb(var(--color-success));
+}
+
+.remove {
+    background-color: rgb(var(--color-danger));
+}
+
+.edit {
+    background-color: rgb(var(--color-pending));
+}
+
+.low {
+    background-color: rgb(var(--priority-low));
+}
+
+.high {
+    background-color: rgb(var(--priority-high));
+}
+
+.medium {
+    background-color: rgb(var(--priority-medium));
+}

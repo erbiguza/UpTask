@@ -16,12 +16,19 @@ function SpecialBox({ boxname, button, width, children, onclick }) {
     }, []);
 
     return (
-        <div className="container" style={{ width: isMobile ? "100%" : width }}>
+        <div
+            className="container"
+            style={{ width: isMobile ? "calc(100% - 20px)" : width }}
+        >
             <h3>{boxname}</h3>
             <div className="elements-container">{children}</div>
-            <div className="button-container">
-                <button onClick={onclick}>{button}</button>
-            </div>
+            {button ? (
+                <div className="button-container">
+                    <button onClick={onclick}>{button}</button>
+                </div>
+            ) : (
+                <div></div>
+            )}
         </div>
     );
 }
