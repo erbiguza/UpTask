@@ -2,15 +2,31 @@ import "./navbar.styles.scss";
 import logout from "../../assets/images/icons/logout.png";
 
 import { useState } from "react";
-import { useNavigate } from "react-router";
+import { useNavigate, useLocation } from "react-router";
 
 import SidebarOption from "./navbar.option.component.jsx";
 import { options } from "../../config/navlinks.js";
 
 function Sidebar() {
-    const [active, setActive] = useState("Dashboard");
+    const location = useLocation();
     const navigate = useNavigate();
 
+    const getActiveName = () => {
+        switch (location.pathname) {
+            case "/":
+                return "Dashboard";
+            case "/tasks":
+                return "My Tasks";
+            case "/calendar":
+                return "Calendar";
+            case "/settings":
+                return "Settings";
+            default:
+                return "";
+        }
+    };
+
+    const active = getActiveName();
     return (
         <div className="sidebar-container">
             {options.map((option) => (
@@ -21,7 +37,6 @@ function Sidebar() {
                     icon={option.icon}
                     onClick={() => {
                         navigate(option.path);
-                        setActive(option.name);
                     }}
                 />
             ))}

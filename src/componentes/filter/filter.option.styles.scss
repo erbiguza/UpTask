@@ -1,0 +1,17 @@
+.option {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    cursor: pointer;
+
+    h4 {
+        color: black;
+    }
+}
+
+.option.active {
+    background-color: rgba(var(--color-primary), 0.06);
+    font-weight: bold;
+}

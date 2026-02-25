@@ -2,7 +2,7 @@ header {
     width: 100vw;
     padding: 0;
     height: 75px;
-    background-color: var(--color-sidebar);
+    background-color: rgba(var(--color-sidebar));
     overflow: hidden;
     border: 1px solid rgba(0, 0, 0, 0.07);
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);

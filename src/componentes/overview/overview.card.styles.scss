@@ -26,15 +26,15 @@
 }
 
 .completed {
-    background-color: var(--color-success);
+    background-color: rgba(var(--color-success));
 }
 
 .pending {
-    background-color: var(--color-pending);
+    background-color: rgba(var(--color-pending));
 }
 
 .overdue {
-    background-color: var(--color-danger);
+    background-color: rgba(var(--color-danger));
 }
 
 @media (max-width: 768px) {

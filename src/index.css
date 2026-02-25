@@ -1,35 +1,35 @@
 :root {
-    --color-bg: #f3f3f8;
-    --color-sidebar: #32466d;
-    --color-card: #ffffff;
-    --color-section: #f7f8fb;
+    --color-bg: 243, 243, 248;
+    --color-sidebar: 50, 70, 109;
+    --color-card: 255, 255, 255;
+    --color-section: 247, 248, 251;
 
-    --color-text-primary: #111827;
-    --color-text-secondary: #6b7280;
+    --color-text-primary: 17, 24, 39;
+    --color-text-secondary: 107, 114, 128;
 
-    --color-primary: #4f46e5;
-    --color-border: #e5e7eb;
+    --color-primary: 79, 70, 229;
+    --color-border: 229, 231, 235;
 
-    --color-success: #10b981;
-    --color-pending: #4073d9;
-    --color-warning: #f59e0b;
-    --color-danger: #ef4444;
+    --color-success: 16, 185, 129;
+    --color-pending: 64, 115, 217;
+    --color-warning: 245, 158, 11;
+    --color-danger: 239, 68, 68;
 }
 
 .dark {
-    --color-bg: #1f2937;
-    --color-sidebar: #111827;
-    --color-card: #374151;
+    --color-bg: 31, 41, 55;
+    --color-sidebar: 17, 24, 39;
+    --color-card: 55, 65, 81;
 
-    --color-text-primary: #f9fafb;
-    --color-text-secondary: #9ca3af;
+    --color-text-primary: 249, 250, 251;
+    --color-text-secondary: 156, 163, 175;
 
-    --color-primary: #6366f1;
-    --color-border: #4b5563;
+    --color-primary: 99, 102, 241;
+    --color-border: 75, 85, 99;
 
-    --color-success: #34d399;
-    --color-warning: #fbbf24;
-    --color-danger: #f87171;
+    --color-success: 52, 211, 153;
+    --color-warning: 251, 191, 36;
+    --color-danger: 248, 113, 113;
 }
 
 * {

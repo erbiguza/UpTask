@@ -3,8 +3,8 @@
     min-height: 27px;
     height: auto;
     padding: 4px;
-    background-color: var(--color-card);
-    color: var(--color-text-secondary);
+    background-color: rgba(var(--color-card));
+    color: rgba(var(--color-text-secondary));
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }

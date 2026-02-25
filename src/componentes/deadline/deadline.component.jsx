@@ -18,7 +18,11 @@ function Deadline() {
             onclick={() => console.log("punon!")}
         >
             {tasks.map((task) => (
-                <DeadlineTask duedate={task.duedate} task={task.task} />
+                <DeadlineTask
+                    key={task.task}
+                    duedate={task.duedate}
+                    task={task.task}
+                />
             ))}
         </SpecialBox>
     );
