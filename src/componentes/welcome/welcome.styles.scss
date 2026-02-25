@@ -48,15 +48,16 @@
 }
 
 @media (max-width: 768px) {
-    .welcome-section {
+    .whole-container {
         height: 80px;
+        .welcome-section {
+            h1 {
+                font-size: 25px;
+            }
 
-        h1 {
-            font-size: 25px;
-        }
-
-        h3 {
-            font-size: 17px;
+            h3 {
+                font-size: 17px;
+            }
         }
     }
 }
