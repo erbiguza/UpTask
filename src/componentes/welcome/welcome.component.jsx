@@ -1,10 +1,10 @@
 import "./welcome.styles.scss";
 
-function Welcome() {
+function Welcome({ title, description }) {
     return (
         <div className="welcome-section">
-            <h1>Welcome back, Ardit!</h1>
-            <h3>Here's your productivity overview</h3>
+            <h1>{title}</h1>
+            <h3>{description}</h3>
         </div>
     );
 }
