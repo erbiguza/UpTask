@@ -32,11 +32,16 @@
         background-color: rgba(var(--color-card));
         font-size: 16px;
         border-radius: 5px;
+
         &:focus {
             border: none;
             outline: none;
         }
     }
+}
+
+.normal-input.space {
+    text-transform: capitalize;
 }
 
 @media (max-width: 768px) {

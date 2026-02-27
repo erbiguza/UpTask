@@ -24,7 +24,7 @@ function SignUpPage() {
                         <NormalInput
                             icon={email}
                             placeholder={"Email"}
-                            type={email}
+                            type={"email"}
                         />
                         <PasswordInput placeholder={"Password"} />
                         <PasswordInput placeholder={"Confirm Password"} />
