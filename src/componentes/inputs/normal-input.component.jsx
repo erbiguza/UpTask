@@ -1,6 +1,6 @@
 import "./normal-input.styles.scss";
 
-function NormalInput({ placeholder, icon, type }) {
+function NormalInput({ placeholder, icon, type, value, onchange }) {
     let clsname = "normal-input ";
 
     if (type !== "email") clsname += "space";
@@ -13,6 +13,8 @@ function NormalInput({ placeholder, icon, type }) {
                 className={clsname}
                 placeholder={placeholder}
                 type={type}
+                onChange={onchange}
+                value={value}
                 required
             />
         </div>

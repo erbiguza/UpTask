@@ -5,7 +5,7 @@ import visible from "../../assets/images/inputs/visible.png";
 import invisible from "../../assets/images/inputs/invisible.png";
 import { useState } from "react";
 
-function PasswordInput({ placeholder }) {
+function PasswordInput({ placeholder, value, onchange }) {
     const [visibility, setVisibility] = useState(false);
 
     let type = "password";
@@ -24,6 +24,8 @@ function PasswordInput({ placeholder }) {
                 className="password-input"
                 placeholder={placeholder}
                 type={type}
+                value={value}
+                onChange={onchange}
                 required
             />
             <div
