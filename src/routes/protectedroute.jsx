@@ -5,7 +5,7 @@ import Sidebar from "../componentes/navbar/navbar.component";
 
 import { useSelector } from "react-redux";
 
-function ProtectedRoute({ user1, setUser }) {
+function ProtectedRoute() {
     const user = useSelector((state) => state.user.user);
     if (Object.keys(user).length === 0) {
         return <Navigate to="/signup" replace />;

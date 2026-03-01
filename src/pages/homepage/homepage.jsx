@@ -3,12 +3,15 @@ import Overview from "../../componentes/overview/overview.component";
 import QuickNotes from "../../componentes/quicknotes/quicknotes.component";
 import Welcome from "../../componentes/welcome/welcome.component";
 
+import { saveLocationToSession } from "../../config/navlinks.js";
+
 import "./homepage.styles.scss";
 
 import { useSelector } from "react-redux";
 
 function Homepage() {
     const { first_name } = useSelector((state) => state.user.user);
+    saveLocationToSession();
 
     return (
         <>
