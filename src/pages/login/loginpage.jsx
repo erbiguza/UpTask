@@ -12,8 +12,16 @@ import NormalInput from "../../componentes/inputs/normal-input.component";
 import PasswordInput from "../../componentes/inputs/password-input.component";
 import SpecialButton from "../../componentes/special-button/special-button.component";
 
-function LogInPage({ user, setUser }) {
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { setUser } from "../../redux/user/userSlice";
+
+function LogInPage() {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    const user = useSelector((state) => state.user.user);
+
     useEffect(() => {
         if (Object.keys(user).length > 0) navigate("/");
     }, [user]);
@@ -28,7 +36,7 @@ function LogInPage({ user, setUser }) {
         try {
             await auth_api.post("./login", { email, password });
             const newUser = await getUser();
-            setUser(newUser);
+            dispatch(setUser(newUser));
             navigate("/");
         } catch (error) {
             setErrorMsg(error.response.data.message);

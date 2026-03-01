@@ -5,11 +5,15 @@ import Welcome from "../../componentes/welcome/welcome.component";
 
 import "./homepage.styles.scss";
 
-function Homepage({ name }) {
+import { useSelector } from "react-redux";
+
+function Homepage() {
+    const { first_name } = useSelector((state) => state.user.user);
+
     return (
         <>
             <Welcome
-                title={`Welcome back, ${name}!`}
+                title={`Welcome back, ${first_name}!`}
                 description={"Here's your productivity overview"}
             />
             <Overview />

@@ -3,7 +3,10 @@ import { Navigate, Outlet } from "react-router-dom";
 import Header from "../componentes/header/header.component";
 import Sidebar from "../componentes/navbar/navbar.component";
 
-function ProtectedRoute({ user, setUser }) {
+import { useSelector } from "react-redux";
+
+function ProtectedRoute({ user1, setUser }) {
+    const user = useSelector((state) => state.user.user);
     if (Object.keys(user).length === 0) {
         return <Navigate to="/signup" replace />;
     }
@@ -11,7 +14,7 @@ function ProtectedRoute({ user, setUser }) {
     return (
         <>
             <Header user={user} />
-            <Sidebar setUser={setUser} />
+            <Sidebar />
             <main className="content">
                 <Outlet />
             </main>

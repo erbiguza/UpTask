@@ -12,16 +12,19 @@ import ProtectedRoute from "./routes/protectedroute.jsx";
 
 import { useEffect, useState } from "react";
 
+import { useDispatch } from "react-redux";
+import { setUser } from "./redux/user/userSlice.js";
+
 import { getUser } from "./config/api/auth_api.js";
 
 function App() {
-    const [user, setUser] = useState({});
+    const dispatch = useDispatch();
 
     useEffect(() => {
         const fetchUser = async () => {
             const data = await getUser();
 
-            setUser(data);
+            dispatch(setUser(data));
         };
 
         fetchUser();
@@ -29,17 +32,11 @@ function App() {
 
     return (
         <Routes>
-            <Route
-                path="/signup"
-                element={<SignUpPage user={user} setUser={setUser} />}
-            />
-            <Route
-                path="/login"
-                element={<LogInPage user={user} setUser={setUser} />}
-            />
+            <Route path="/signup" element={<SignUpPage />} />
+            <Route path="/login" element={<LogInPage />} />
 
-            <Route element={<ProtectedRoute user={user} setUser={setUser} />}>
-                <Route path="/" element={<Homepage name={user.first_name} />} />
+            <Route element={<ProtectedRoute />}>
+                <Route path="/" element={<Homepage />} />
                 <Route path="/tasks" element={<MyTasksPage />} />
                 <Route path="/calendar" element={<CalendarPage />} />
                 <Route path="/settings" element={<SettingsPage />} />

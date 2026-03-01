@@ -8,9 +8,13 @@ import { useNavigate, useLocation } from "react-router";
 import SidebarOption from "./navbar.option.component.jsx";
 import { options } from "../../config/navlinks.js";
 
-function Sidebar({ setUser }) {
+import { clearUser } from "../../redux/user/userSlice.js";
+import { useDispatch } from "react-redux";
+
+function Sidebar() {
     const location = useLocation();
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const getActiveName = () => {
         switch (location.pathname) {
@@ -45,7 +49,7 @@ function Sidebar({ setUser }) {
                 className="logout-btn"
                 onClick={async () => {
                     await logout();
-                    setUser({});
+                    dispatch(clearUser());
                     navigate("/");
                 }}
             >
