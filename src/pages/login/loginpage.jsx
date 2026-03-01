@@ -23,7 +23,13 @@ function LogInPage() {
     const user = useSelector((state) => state.user.user);
 
     useEffect(() => {
-        if (Object.keys(user).length > 0) navigate("/");
+        if (Object.keys(user).length > 0) {
+            navigate(
+                sessionStorage.getItem("path")
+                    ? sessionStorage.getItem("path")
+                    : "/",
+            );
+        }
     }, [user]);
 
     const [email, setEmail] = useState("");

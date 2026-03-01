@@ -25,7 +25,11 @@ function SignUpPage() {
 
     useEffect(() => {
         if (Object.keys(user).length > 0)
-            navigate(sessionStorage.getItem("path"));
+            navigate(
+                sessionStorage.getItem("path")
+                    ? sessionStorage.getItem("path")
+                    : "/",
+            );
     }, [user]);
 
     const [fullname, setFullname] = useState("");
