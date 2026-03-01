@@ -1,7 +1,9 @@
 import "./loginpage.scss";
 
-import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { auth_api, getUser } from "../../config/api/auth_api";
+
+import { useState, useEffect } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 
 import logo from "../../assets/images/icons/logo.png";
 import emailphoto from "../../assets/images/inputs/email.png";
@@ -10,13 +12,28 @@ import NormalInput from "../../componentes/inputs/normal-input.component";
 import PasswordInput from "../../componentes/inputs/password-input.component";
 import SpecialButton from "../../componentes/special-button/special-button.component";
 
-function LogInPage() {
+function LogInPage({ user, setUser }) {
+    const navigate = useNavigate();
+    useEffect(() => {
+        if (Object.keys(user).length > 0) navigate("/");
+    }, [user]);
+
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
     const [errorMsg, setErrorMsg] = useState("");
 
-    const handleLogin = (event) => {};
+    const handleLogin = async (event) => {
+        event.preventDefault();
+        try {
+            await auth_api.post("./login", { email, password });
+            const newUser = await getUser();
+            setUser(newUser);
+            navigate("/");
+        } catch (error) {
+            setErrorMsg(error.response.data.message);
+        }
+    };
 
     return (
         <>

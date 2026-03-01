@@ -1,13 +1,14 @@
 import "./navbar.styles.scss";
-import logout from "../../assets/images/icons/logout.png";
+import logoutimg from "../../assets/images/icons/logout.png";
 
 import { useState } from "react";
+import { logout } from "../../config/api/auth_api.js";
 import { useNavigate, useLocation } from "react-router";
 
 import SidebarOption from "./navbar.option.component.jsx";
 import { options } from "../../config/navlinks.js";
 
-function Sidebar() {
+function Sidebar({ setUser }) {
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -40,9 +41,16 @@ function Sidebar() {
                     }}
                 />
             ))}
-            <div className="logout-btn">
+            <div
+                className="logout-btn"
+                onClick={async () => {
+                    await logout();
+                    setUser({});
+                    navigate("/");
+                }}
+            >
                 <div className="imgContainer">
-                    <img src={logout} />
+                    <img src={logoutimg} />
                 </div>
                 <span>Log Out</span>
             </div>

@@ -5,11 +5,11 @@ import Welcome from "../../componentes/welcome/welcome.component";
 
 import "./homepage.styles.scss";
 
-function Homepage() {
+function Homepage({ name }) {
     return (
         <>
             <Welcome
-                title={"Welcome back, Ardit!"}
+                title={`Welcome back, ${name}!`}
                 description={"Here's your productivity overview"}
             />
             <Overview />

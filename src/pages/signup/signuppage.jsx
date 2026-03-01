@@ -1,17 +1,24 @@
 import "./signuppage.scss";
 
-import { NavLink } from "react-router-dom";
-import { useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+
+import { auth_api, getUser } from "../../config/api/auth_api";
 
 import logo from "../../assets/images/icons/logo.png";
-import user from "../../assets/images/inputs/user.png";
+import userphoto from "../../assets/images/inputs/user.png";
 import emailphoto from "../../assets/images/inputs/email.png";
 
 import NormalInput from "../../componentes/inputs/normal-input.component";
 import PasswordInput from "../../componentes/inputs/password-input.component";
 import SpecialButton from "../../componentes/special-button/special-button.component";
 
-function SignUpPage() {
+function SignUpPage({ user, setUser }) {
+    const navigate = useNavigate();
+    useEffect(() => {
+        if (Object.keys(user).length > 0) navigate("/");
+    }, [user]);
+
     const [fullname, setFullname] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -19,7 +26,7 @@ function SignUpPage() {
 
     const [errorMsg, setErrorMsg] = useState(" ");
 
-    const handleSignup = (event) => {
+    const handleSignup = async (event) => {
         setErrorMsg("");
         if (
             fullname === "" ||
@@ -28,14 +35,34 @@ function SignUpPage() {
             confirmPassword === ""
         ) {
             setErrorMsg("All fields required");
-        }
-        if (password !== confirmPassword) {
+        } else if (password !== confirmPassword) {
             event.preventDefault();
             setErrorMsg("Passwords don't match");
-        }
-        if (password.length < 8) {
+        } else if (password.length < 8) {
             event.preventDefault();
             setErrorMsg("Minimum password length is 8");
+        } else {
+            event.preventDefault();
+            const [first_name, last_name] = fullname.split(" ");
+
+            if (!first_name || !last_name) {
+                setErrorMsg("Please enter first and last name");
+            } else {
+                try {
+                    await auth_api.post("/signup", {
+                        first_name,
+                        last_name,
+                        email,
+                        password,
+                    });
+                    const newUser = await getUser();
+                    setUser(newUser);
+                    navigate("/");
+                } catch (error) {
+                    console.log(error);
+                    setErrorMsg(error.response.data.message);
+                }
+            }
         }
     };
 
@@ -48,7 +75,7 @@ function SignUpPage() {
                     </div>
                     <form className="form">
                         <NormalInput
-                            icon={user}
+                            icon={userphoto}
                             placeholder={"Full Name"}
                             type={"text"}
                             value={fullname}

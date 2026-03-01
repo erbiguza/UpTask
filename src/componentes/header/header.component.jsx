@@ -7,7 +7,7 @@ import dark_mode from "../../assets/images/icons/dark_mode.png";
 
 import { useState } from "react";
 
-function Header() {
+function Header({ user }) {
     const [dark, setDark] = useState(false);
 
     const toggleMode = () => {
@@ -29,7 +29,7 @@ function Header() {
                     </div>
                     <div className="profile-container">
                         <img src={m_userprofile} />
-                        <span className="username">Ardit</span>
+                        <span className="username">{user.first_name}</span>
                     </div>
                 </div>
             </header>
