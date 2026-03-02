@@ -8,7 +8,7 @@ function Loading() {
     return (
         <div className="loading-container">
             <ClipLoader
-                color={"32466d"}
+                color={"#32466d"}
                 loading={loading}
                 size={150}
                 aria-label="Loading Spinner"

@@ -4,7 +4,7 @@ function TaskHead() {
     return (
         <div className="head-container">
             <div className="task-desc">
-                <h3>Task Description</h3>
+                <h3>Description</h3>
             </div>
             <div className="duedate">
                 <h3>Due Date</h3>
