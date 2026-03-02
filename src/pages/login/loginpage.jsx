@@ -15,20 +15,18 @@ import SpecialButton from "../../componentes/special-button/special-button.compo
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { setUser } from "../../redux/user/userSlice";
+import { setLoading } from "../../redux/loading/loadingSlice";
 
 function LogInPage() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
+    const loading = useSelector((state) => state.loading.loading);
     const user = useSelector((state) => state.user.user);
 
     useEffect(() => {
         if (Object.keys(user).length > 0) {
-            navigate(
-                sessionStorage.getItem("path")
-                    ? sessionStorage.getItem("path")
-                    : "/",
-            );
+            navigate("/");
         }
     }, [user]);
 
@@ -40,9 +38,11 @@ function LogInPage() {
     const handleLogin = async (event) => {
         event.preventDefault();
         try {
+            dispatch(setLoading(true));
             await auth_api.post("./login", { email, password });
             const newUser = await getUser();
             dispatch(setUser(newUser));
+            dispatch(setLoading(false));
             navigate("/");
         } catch (error) {
             setErrorMsg(error.response.data.message);

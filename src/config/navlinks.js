@@ -11,9 +11,3 @@ export const options = [
     { name: "Calendar", icon: calendar, path: "/calendar" },
     { name: "Settings", icon: settings, path: "/settings" },
 ];
-
-export const saveLocationToSession = () => {
-    const location = useLocation();
-
-    sessionStorage.setItem("path", location.pathname);
-};
