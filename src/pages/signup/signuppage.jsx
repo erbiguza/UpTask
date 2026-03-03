@@ -21,7 +21,6 @@ import { setLoading } from "../../redux/loading/loadingSlice";
 function SignUpPage() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const loading = useSelector((state) => state.loading.loading);
 
     const user = useSelector((state) => state.user.user);
 
@@ -37,6 +36,7 @@ function SignUpPage() {
     const [errorMsg, setErrorMsg] = useState(" ");
 
     const handleSignup = async (event) => {
+        event.preventDefault();
         setErrorMsg("");
         if (
             fullname === "" ||
@@ -46,13 +46,10 @@ function SignUpPage() {
         ) {
             setErrorMsg("All fields required");
         } else if (password !== confirmPassword) {
-            event.preventDefault();
             setErrorMsg("Passwords don't match");
         } else if (password.length < 8) {
-            event.preventDefault();
             setErrorMsg("Minimum password length is 8");
         } else {
-            event.preventDefault();
             const [first_name, last_name] = fullname.split(" ");
 
             if (!first_name || !last_name) {
@@ -68,11 +65,14 @@ function SignUpPage() {
                     });
                     const newUser = await getUser();
                     dispatch(setUser(newUser));
-                    dispatch(setLoading(false));
-                    navigate("/");
                 } catch (error) {
-                    console.log(error);
-                    setErrorMsg(error.response.data.message);
+                    if (!error.response) {
+                        setErrorMsg("Please try again later");
+                    } else {
+                        setErrorMsg(error.response.data.message);
+                    }
+                } finally {
+                    dispatch(setLoading(false));
                 }
             }
         }
@@ -85,7 +85,7 @@ function SignUpPage() {
                     <div className="head-container">
                         <img src={logo} />
                     </div>
-                    <form className="form">
+                    <form className="form" onSubmit={handleSignup}>
                         <NormalInput
                             icon={userphoto}
                             placeholder={"Full Name"}
@@ -121,11 +121,7 @@ function SignUpPage() {
                         <div className="error-container">
                             <p className="error-message">{errorMsg}</p>
                         </div>
-                        <SpecialButton
-                            name={"Sign Up"}
-                            type={"login"}
-                            onclick={handleSignup}
-                        />
+                        <SpecialButton name={"Sign Up"} type={"login"} />
                     </form>
                     <p>
                         Already have an account?{" "}

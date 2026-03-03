@@ -24,32 +24,35 @@ function App() {
     const loading = useSelector((state) => state.loading.loading);
     useEffect(() => {
         const fetchUser = async () => {
-            dispatch(setLoading(true));
-            const data = await getUser();
+            try {
+                dispatch(setLoading(true));
+                const data = await getUser();
 
-            dispatch(setUser(data));
-            dispatch(setLoading(false));
+                dispatch(setUser(data));
+            } catch (error) {
+                console.error(error);
+            } finally {
+                dispatch(setLoading(false));
+            }
         };
         fetchUser();
     }, []);
 
     return (
         <>
-            {loading ? (
-                <Loading />
-            ) : (
-                <Routes>
-                    <Route path="/signup" element={<SignUpPage />} />
-                    <Route path="/login" element={<LogInPage />} />
+            {loading && <Loading />}
 
-                    <Route element={<ProtectedRoute />}>
-                        <Route path="/" element={<Homepage />} />
-                        <Route path="/tasks" element={<MyTasksPage />} />
-                        <Route path="/calendar" element={<CalendarPage />} />
-                        <Route path="/settings" element={<SettingsPage />} />
-                    </Route>
-                </Routes>
-            )}
+            <Routes>
+                <Route path="/signup" element={<SignUpPage />} />
+                <Route path="/login" element={<LogInPage />} />
+
+                <Route element={<ProtectedRoute />}>
+                    <Route path="/" element={<Homepage />} />
+                    <Route path="/tasks" element={<MyTasksPage />} />
+                    <Route path="/calendar" element={<CalendarPage />} />
+                    <Route path="/settings" element={<SettingsPage />} />
+                </Route>
+            </Routes>
         </>
     );
 }

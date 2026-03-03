@@ -21,7 +21,6 @@ function LogInPage() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
-    const loading = useSelector((state) => state.loading.loading);
     const user = useSelector((state) => state.user.user);
 
     useEffect(() => {
@@ -39,13 +38,17 @@ function LogInPage() {
         event.preventDefault();
         try {
             dispatch(setLoading(true));
-            await auth_api.post("./login", { email, password });
+            await auth_api.post("/login", { email, password });
             const newUser = await getUser();
             dispatch(setUser(newUser));
-            dispatch(setLoading(false));
-            navigate("/");
         } catch (error) {
-            setErrorMsg(error.response.data.message);
+            if (!error.response) {
+                setErrorMsg("Please try again later");
+            } else {
+                setErrorMsg(error.response.data.message);
+            }
+        } finally {
+            dispatch(setLoading(false));
         }
     };
 
@@ -56,7 +59,7 @@ function LogInPage() {
                     <div className="head-container">
                         <img src={logo} />
                     </div>
-                    <form className="form">
+                    <form className="form" onSubmit={handleLogin}>
                         <NormalInput
                             icon={emailphoto}
                             placeholder={"Email"}
@@ -77,11 +80,7 @@ function LogInPage() {
                             <p className="error-message">{errorMsg}</p>
                         </div>
 
-                        <SpecialButton
-                            name={"Log In"}
-                            type={"login"}
-                            onclick={handleLogin}
-                        />
+                        <SpecialButton name={"Log In"} type={"login"} />
                     </form>
                     <p>
                         Don't have an account?{" "}
