@@ -12,7 +12,7 @@ import NormalInput from "../../componentes/inputs/normal-input.component";
 import PasswordInput from "../../componentes/inputs/password-input.component";
 import SpecialButton from "../../componentes/special-button/special-button.component";
 
-import { useSelector } from "react-redux";
+import { userSelector } from "../../redux/user/userSelector.js";
 import { useDispatch } from "react-redux";
 import { setUser } from "../../redux/user/userSlice";
 import { setLoading } from "../../redux/loading/loadingSlice";
@@ -21,7 +21,7 @@ function LogInPage() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
-    const user = useSelector((state) => state.user.user);
+    const user = userSelector();
 
     useEffect(() => {
         if (Object.keys(user).length > 0) {

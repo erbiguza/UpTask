@@ -5,10 +5,10 @@ import Welcome from "../../componentes/welcome/welcome.component";
 
 import "./homepage.styles.scss";
 
-import { useSelector } from "react-redux";
+import { userSelector } from "../../redux/user/userSelector.js";
 
 function Homepage() {
-    const { first_name } = useSelector((state) => state.user.user);
+    const { first_name } = userSelector();
 
     return (
         <>

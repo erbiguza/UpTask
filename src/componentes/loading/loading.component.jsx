@@ -1,10 +1,10 @@
 import "./loading.styles.scss";
 
 import { ClipLoader } from "react-spinners";
-import { useSelector } from "react-redux";
+import { loadingSelector } from "../../redux/loading/loadingSelector.js";
 
 function Loading() {
-    const loading = useSelector((state) => state.loading.loading);
+    const loading = loadingSelector();
     return (
         <div className="loading-container">
             <ClipLoader

@@ -13,15 +13,16 @@ import Loading from "./componentes/loading/loading.component.jsx";
 
 import { useEffect } from "react";
 
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setUser } from "./redux/user/userSlice.js";
 import { setLoading } from "./redux/loading/loadingSlice.js";
+import { loadingSelector } from "./redux/loading/loadingSelector.js";
 
 import { getUser } from "./config/api/auth_api.js";
 
 function App() {
     const dispatch = useDispatch();
-    const loading = useSelector((state) => state.loading.loading);
+    const loading = loadingSelector();
     useEffect(() => {
         const fetchUser = async () => {
             try {

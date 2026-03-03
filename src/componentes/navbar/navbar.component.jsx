@@ -8,15 +8,13 @@ import SidebarOption from "./navbar.option.component.jsx";
 import { options } from "../../config/navlinks.js";
 
 import { clearUser } from "../../redux/user/userSlice.js";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setLoading } from "../../redux/loading/loadingSlice.js";
 
 function Sidebar() {
     const location = useLocation();
     const navigate = useNavigate();
     const dispatch = useDispatch();
-
-    const loading = useSelector((state) => state.loading.loading);
 
     const getActiveName = () => {
         switch (location.pathname) {

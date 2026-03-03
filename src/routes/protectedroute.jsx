@@ -4,11 +4,12 @@ import Header from "../componentes/header/header.component";
 import Sidebar from "../componentes/navbar/navbar.component";
 import Loading from "../componentes/loading/loading.component";
 
-import { useSelector } from "react-redux";
+import { loadingSelector } from "../redux/loading/loadingSelector.js";
+import { userSelector } from "../redux/user/userSelector.js";
 
 function ProtectedRoute() {
-    const user = useSelector((state) => state.user.user);
-    const loading = useSelector((state) => state.loading.loading);
+    const user = userSelector();
+    const loading = loadingSelector();
 
     if (loading) {
         return <Loading />;
