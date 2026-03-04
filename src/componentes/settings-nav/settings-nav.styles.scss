@@ -1,0 +1,38 @@
+.settings-nav {
+    height: 100%;
+    width: 170px;
+    position: fixed;
+    top: 75px;
+    margin: 0;
+    z-index: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: rgb(var(--color-bg));
+    box-shadow: 2px 0px 8px rgba(0, 0, 0, 0.15);
+
+    .options-container {
+        width: 100%;
+        margin-top: 120px;
+    }
+}
+
+@media (max-width: 768px) {
+    .settings-nav {
+        height: 165px;
+        width: calc(100% - 40px);
+        position: inherit;
+        z-index: inherit;
+        margin-top: 10px;
+        margin-left: 20px;
+        margin-right: 20px;
+        top: 55px;
+        border-radius: 5px;
+
+        .options-container {
+            margin-top: 0px;
+        }
+    }
+}
