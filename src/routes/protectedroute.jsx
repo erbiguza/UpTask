@@ -11,10 +11,7 @@ function ProtectedRoute() {
     const user = userSelector();
     const loading = loadingSelector();
 
-    if (loading) {
-        return <Loading />;
-    }
-    if (Object.keys(user).length === 0) {
+    if (Object.keys(user).length === 0 && !loading) {
         return <Navigate to="/signup" replace />;
     }
 
