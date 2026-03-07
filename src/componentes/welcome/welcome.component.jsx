@@ -10,7 +10,12 @@ function Welcome({ title, description, button, onclick }) {
                 </div>
                 {button ? (
                     <div className="button-container">
-                        <button onClick={onclick}>{button}</button>
+                        <button
+                            className="welcome-componentBtn"
+                            onClick={onclick}
+                        >
+                            {button}
+                        </button>
                     </div>
                 ) : (
                     <div></div>

@@ -24,7 +24,9 @@ function SpecialBox({ boxname, button, width, children, onclick }) {
             <div className="elements-container">{children}</div>
             {button ? (
                 <div className="button-container">
-                    <button onClick={onclick}>{button}</button>
+                    <button className="special-boxBtn" onClick={onclick}>
+                        {button}
+                    </button>
                 </div>
             ) : (
                 <></>

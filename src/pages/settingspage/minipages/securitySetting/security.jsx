@@ -43,6 +43,9 @@ function Security() {
                     setErrorMsg(error.response.data.message);
                 }
             } finally {
+                setOldPassword("");
+                setNewPassword("");
+                setConfirmPassword("");
                 dispatch(setLoading(false));
             }
         }
