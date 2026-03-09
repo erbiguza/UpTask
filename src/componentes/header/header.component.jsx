@@ -6,9 +6,12 @@ import light_mode from "../../assets/images/icons/light_mode.png";
 import dark_mode from "../../assets/images/icons/dark_mode.png";
 
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Header({ user }) {
     const [dark, setDark] = useState(false);
+
+    const navigate = useNavigate();
 
     const toggleMode = () => {
         setDark(!dark);
@@ -27,7 +30,12 @@ function Header({ user }) {
                             src={dark ? dark_mode : light_mode}
                         />
                     </div>
-                    <div className="profile-container">
+                    <div
+                        className="profile-container"
+                        onClick={() => {
+                            navigate("/settings");
+                        }}
+                    >
                         <img src={m_userprofile} />
                         <span className="username">{user.first_name}</span>
                     </div>

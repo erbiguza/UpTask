@@ -1,0 +1,21 @@
+.mobile-only {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mobile-only {
+        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: auto;
+        margin-bottom: 0;
+
+        .logout-btn {
+            font-size: 14px;
+            height: 30px;
+            width: 100px;
+            color: red;
+        }
+    }
+}

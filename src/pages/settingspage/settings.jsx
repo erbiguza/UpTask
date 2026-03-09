@@ -40,18 +40,6 @@ function SettingsPage() {
                 <Welcome title={"Settings"} />
                 <SettingsNav isActive={isActive} setActive={setActive} />
                 <main className="main-settings">{content}</main>
-                <div className="mobile-only">
-                    <button
-                        className="logout-btn"
-                        onClick={async () => {
-                            await logout();
-                            dispatch(clearUser());
-                            navigate("/");
-                        }}
-                    >
-                        Log Out
-                    </button>
-                </div>
             </div>
         </>
     );
