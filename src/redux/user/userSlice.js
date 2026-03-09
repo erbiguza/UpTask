@@ -9,13 +9,15 @@ const userSlice = createSlice({
     initialState,
     reducers: {
         setUser: (state, action) => {
-            const { first_name, last_name, email } = action.payload;
+            const { first_name, last_name, email, profile_pic } =
+                action.payload;
 
-            if (first_name && last_name && email) {
+            if (first_name && last_name && email && profile_pic) {
                 state.user = {
                     first_name,
                     last_name,
                     email,
+                    profile_pic,
                 };
             } else {
                 state.user = {};

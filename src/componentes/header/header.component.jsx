@@ -1,7 +1,5 @@
 import "./header.styles.scss";
 import logo from "../../assets/images/icons/logo.png";
-import m_userprofile from "../../assets/images/userprofile/m_userprofile.png";
-import f_userprofile from "../../assets/images/userprofile/f_userprofile.png";
 import light_mode from "../../assets/images/icons/light_mode.png";
 import dark_mode from "../../assets/images/icons/dark_mode.png";
 
@@ -36,7 +34,9 @@ function Header({ user }) {
                             navigate("/settings");
                         }}
                     >
-                        <img src={m_userprofile} />
+                        <img
+                            src={`http://192.168.1.9:4000/images/profiles${user.profile_pic}`}
+                        />
                         <span className="username">{user.first_name}</span>
                     </div>
                 </div>
