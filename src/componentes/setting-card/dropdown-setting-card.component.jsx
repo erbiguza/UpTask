@@ -1,9 +1,9 @@
 import { useState } from "react";
-import "./setting-card.styles.scss";
+import "./dropdown-setting-card.styles.scss";
 
 import arrow from "../../assets/images/icons/arrow.png";
 
-function SettingCard({ title, description, children }) {
+function DropdownSettingCard({ title, description, children }) {
     const [active, setActive] = useState(false);
 
     const toggleActive = () => {
@@ -35,4 +35,4 @@ function SettingCard({ title, description, children }) {
     );
 }
 
-export default SettingCard;
+export default DropdownSettingCard;

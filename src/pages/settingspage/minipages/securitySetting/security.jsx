@@ -1,12 +1,14 @@
 import "./security.styles.scss";
 
-import SettingCard from "../../../../componentes/setting-card/setting-card.component";
+import DropdownSettingCard from "../../../../componentes/setting-card/dropdown-setting-card.component";
+import NormalSettingCard from "../../../../componentes/setting-card/normal-setting-card.component.jsx";
 import PasswordInput from "../../../../componentes/inputs/password-input.component";
 
 import { useState } from "react";
 import { auth_api } from "../../../../config/api/auth_api";
 import { useDispatch } from "react-redux";
 import { setLoading } from "../../../../redux/loading/loadingSlice.js";
+import SpecialButton from "../../../../componentes/special-button/special-button.component.jsx";
 
 function Security() {
     const dispatch = useDispatch();
@@ -52,7 +54,7 @@ function Security() {
     };
     return (
         <>
-            <SettingCard
+            <DropdownSettingCard
                 title={"Change your password"}
                 description={"Update password regularly"}
             >
@@ -81,10 +83,17 @@ function Security() {
                 <p className="error-msg">{errorMsg}</p>
                 <p className="success-msg">{successMsg}</p>
 
-                <button className="confirm-button" onClick={updatePass}>
-                    Update
-                </button>
-            </SettingCard>
+                <SpecialButton
+                    name={"Update"}
+                    type={"confirm"}
+                    onclick={updatePass}
+                />
+            </DropdownSettingCard>
+            <NormalSettingCard
+                title={"Two Factor Authentication"}
+                description={"Enable 2FA"}
+                buttonName={"Enable"}
+            />
         </>
     );
 }

@@ -1,0 +1,64 @@
+.setting-card {
+    height: 80px;
+    width: calc(100% - 40px);
+    padding: 0px 10px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+
+    transition: height 0.4s ease;
+
+    .first-row {
+        display: flex;
+        width: 100%;
+        .text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            h4 {
+                color: rgb(var(--color-text-secondary));
+            }
+        }
+
+        .button-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: auto;
+
+            .settingButton {
+                height: 40px;
+                font-size: 18px;
+                font-weight: bold;
+                border-radius: 5px;
+                background-color: rgb(var(--color-pending));
+                width: 100px;
+                color: white;
+                border: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .setting-card {
+        .text {
+            h2 {
+                font-size: 17px;
+            }
+
+            h4 {
+                font-size: 13px;
+            }
+        }
+    }
+
+    .setting-card.active {
+        .input-form {
+            width: 100%;
+        }
+    }
+}

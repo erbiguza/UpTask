@@ -1,4 +1,4 @@
-button {
+.special-button {
     width: 80%;
     height: 40px;
     align-self: center;
@@ -13,7 +13,7 @@ button {
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.login {
+.confirm {
     background-color: rgb(var(--color-pending));
     color: white;
 }

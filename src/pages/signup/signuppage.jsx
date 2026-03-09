@@ -121,7 +121,7 @@ function SignUpPage() {
                         <div className="error-container">
                             <p className="error-message">{errorMsg}</p>
                         </div>
-                        <SpecialButton name={"Sign Up"} type={"login"} />
+                        <SpecialButton name={"Sign Up"} type={"confirm"} />
                     </form>
                     <p>
                         Already have an account?{" "}

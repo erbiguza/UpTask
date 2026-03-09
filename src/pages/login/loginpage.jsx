@@ -80,7 +80,7 @@ function LogInPage() {
                             <p className="error-message">{errorMsg}</p>
                         </div>
 
-                        <SpecialButton name={"Log In"} type={"login"} />
+                        <SpecialButton name={"Log In"} type={"confirm"} />
                     </form>
                     <p>
                         Don't have an account?{" "}
