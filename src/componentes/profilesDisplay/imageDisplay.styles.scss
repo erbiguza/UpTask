@@ -1,0 +1,19 @@
+.photo-container {
+    height: 58px;
+    width: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    border-radius: 30px;
+    cursor: pointer;
+    .profile-display {
+        height: 58px;
+        width: auto;
+        margin: 0;
+    }
+}
+
+.selected {
+    border: 2px solid black;
+}
