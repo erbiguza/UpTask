@@ -41,6 +41,10 @@
 
                 cursor: pointer;
             }
+
+            .disable {
+                background-color: rgb(var(--color-danger));
+            }
         }
     }
 }

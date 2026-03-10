@@ -3,16 +3,19 @@ import logo from "../../assets/images/icons/logo.png";
 import light_mode from "../../assets/images/icons/light_mode.png";
 import dark_mode from "../../assets/images/icons/dark_mode.png";
 
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { darkmodeSelector } from "../../redux/darkmode/darkmodeSelector";
+import { useDispatch } from "react-redux";
+import { setDarkMode } from "../../redux/darkmode/darkmodeSlice";
 
 function Header({ user }) {
-    const [dark, setDark] = useState(false);
+    const darkmode = darkmodeSelector();
+    const dispatch = useDispatch();
 
     const navigate = useNavigate();
 
     const toggleMode = () => {
-        setDark(!dark);
+        dispatch(setDarkMode(!darkmode));
     };
 
     return (
@@ -25,7 +28,7 @@ function Header({ user }) {
                     <div className="view-mode">
                         <img
                             onClick={toggleMode}
-                            src={dark ? dark_mode : light_mode}
+                            src={darkmode ? dark_mode : light_mode}
                         />
                     </div>
                     <div

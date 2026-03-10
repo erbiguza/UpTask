@@ -1,6 +1,8 @@
 import "./normal-setting-card.styles.scss";
 
 function NormalSettingCard({ title, description, buttonName, onclick }) {
+    let clsName = "";
+    if (buttonName === "Disable") clsName += "disable";
     return (
         <div className="setting-card">
             <div className="first-row">
@@ -9,7 +11,10 @@ function NormalSettingCard({ title, description, buttonName, onclick }) {
                     <h4>{description}</h4>
                 </div>
                 <div className="button-container">
-                    <button className="settingButton" onClick={onclick}>
+                    <button
+                        className={`settingButton ${clsName}`}
+                        onClick={onclick}
+                    >
                         {buttonName}
                     </button>
                 </div>
