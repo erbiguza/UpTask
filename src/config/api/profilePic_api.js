@@ -13,4 +13,14 @@ const getDefaultPics = async () => {
     return response.data;
 };
 
-export { getDefaultPics };
+const uploadImage = async (file) => {
+    const formData = new FormData();
+    formData.append("image", file);
+    try {
+        const response = await pic_apis.post("/upload", formData);
+    } catch (error) {
+        console.log(error.response);
+    }
+};
+
+export { getDefaultPics, uploadImage };

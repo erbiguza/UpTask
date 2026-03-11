@@ -1,0 +1,68 @@
+.cropper-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0.6);
+    padding: 1rem;
+}
+
+.cropper-view-box,
+.cropper-face {
+    border-radius: 50% !important;
+}
+
+.cropper-div {
+    width: 70vw;
+    height: 80vh;
+
+    background: white;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.cropper-container {
+    flex: 1;
+    width: 100%;
+    overflow: hidden;
+}
+
+.cropper-btn {
+    width: 100%;
+    padding: 0.7rem;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+}
+
+.send {
+    background-color: rgb(var(--color-success));
+}
+
+.close {
+    background-color: rgb(var(--color-danger));
+}
+
+@media (max-width: 768px) {
+    .cropper-div {
+        width: 95vw;
+        height: 70vh;
+        padding: 0.7rem;
+    }
+
+    .cropper-btn {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+}

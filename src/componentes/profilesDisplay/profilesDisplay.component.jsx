@@ -13,6 +13,7 @@ function ProfilesDisplay({ imageNames, setSelectedPic }) {
         <div className="profiles-display">
             {imageNames.map((image) => (
                 <ImageDisplay
+                    key={image}
                     image={image}
                     onclick={() => {
                         setSelected(image);
