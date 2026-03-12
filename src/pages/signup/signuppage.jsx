@@ -89,7 +89,7 @@ function SignUpPage() {
                         <NormalInput
                             icon={userphoto}
                             placeholder={"Full Name"}
-                            type={"text"}
+                            type={"fullname"}
                             value={fullname}
                             onchange={(e) => {
                                 setFullname(e.target.value);
