@@ -19,7 +19,8 @@ const getNotes = async () => {
 
 const createNote = async (note) => {
     try {
-        await notes_api.post("/createNote", { note });
+        const result = await notes_api.post("/createNote", { note });
+        return result;
     } catch (error) {
         console.error(error.response);
         throw new Error();

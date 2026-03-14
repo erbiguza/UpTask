@@ -1,11 +1,12 @@
 import "./filter.styles.scss";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import FilterOption from "./filter.option";
 
-function Filter() {
+function Filter({ setFilteredTasks, tasks }) {
     const [active, setActive] = useState("All");
+
     return (
         <div className="filter-container">
             <FilterOption
@@ -13,6 +14,9 @@ function Filter() {
                 isActive={active === "Low"}
                 onClick={() => {
                     setActive("Low");
+                    setFilteredTasks(
+                        tasks.filter((task) => task.priority === "low"),
+                    );
                 }}
             />
             <FilterOption
@@ -20,6 +24,9 @@ function Filter() {
                 isActive={active === "Medium"}
                 onClick={() => {
                     setActive("Medium");
+                    setFilteredTasks(
+                        tasks.filter((task) => task.priority === "medium"),
+                    );
                 }}
             />
             <FilterOption
@@ -27,6 +34,9 @@ function Filter() {
                 isActive={active === "High"}
                 onClick={() => {
                     setActive("High");
+                    setFilteredTasks(
+                        tasks.filter((task) => task.priority === "high"),
+                    );
                 }}
             />
             <FilterOption
@@ -34,6 +44,7 @@ function Filter() {
                 isActive={active === "All"}
                 onClick={() => {
                     setActive("All");
+                    setFilteredTasks(tasks);
                 }}
             />
         </div>

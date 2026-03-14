@@ -1,7 +1,10 @@
 import SpecialBox from "../specialbox/specialbox.component";
 import DeadlineTask from "./deadline.task.component";
 
+import { useNavigate } from "react-router-dom";
+
 function Deadline() {
+    const navigate = useNavigate();
     const tasks = [
         { task: "Task 1", duedate: "10/12/2026" },
         { task: "Task 2", duedate: "11/11/2026" },
@@ -15,7 +18,7 @@ function Deadline() {
             boxname={"Upcoming Deadlines"}
             width={"60%"}
             button={"View All Tasks"}
-            onclick={() => console.log("punon!")}
+            onclick={() => navigate("/tasks")}
         >
             {tasks.map((task) => (
                 <DeadlineTask

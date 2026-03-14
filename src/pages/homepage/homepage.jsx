@@ -49,10 +49,13 @@ function Homepage() {
                     onSend={async () => {
                         try {
                             dispatch(setLoading(true));
-                            await createNote(noteValue);
-                            setNotes(await getNotes());
+                            const response = await createNote(noteValue);
+                            setNotes([...notes, response.data.task]);
                         } catch (error) {
-                            console.log("Couldn't create note");
+                            console.log(
+                                "Couldn't create note",
+                                console.log(error),
+                            );
                         } finally {
                             setNoteValue("");
                             setNoteForm(false);
