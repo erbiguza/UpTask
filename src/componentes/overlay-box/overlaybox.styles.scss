@@ -3,7 +3,8 @@
     inset: 0;
     z-index: 9999;
     width: 30vw;
-    height: 40vh;
+    min-height: 40vh;
+    height: auto;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);

@@ -17,8 +17,10 @@ import { useDispatch } from "react-redux";
 import { setUser } from "./redux/user/userSlice.js";
 import { setLoading } from "./redux/loading/loadingSlice.js";
 import { loadingSelector } from "./redux/loading/loadingSelector.js";
+import { setTasks } from "./redux/tasks/taskSlice.js";
 
 import { getUser } from "./config/api/auth_api.js";
+import { getTasks } from "./config/api/tasks_api.js";
 
 function App() {
     const dispatch = useDispatch();
@@ -36,7 +38,21 @@ function App() {
                 dispatch(setLoading(false));
             }
         };
+        const fetchTasks = async () => {
+            try {
+                dispatch(setLoading(true));
+                const tasks = await getTasks();
+
+                dispatch(setTasks(tasks));
+            } catch (error) {
+                console.error(error);
+            } finally {
+                dispatch(setLoading(false));
+            }
+        };
+
         fetchUser();
+        fetchTasks();
     }, []);
 
     return (

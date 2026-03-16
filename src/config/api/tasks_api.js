@@ -10,10 +10,9 @@ export const tasks_api = axios.create({
 const getTasks = async () => {
     try {
         const result = await tasks_api.get("/getTasks");
-        console.log(result);
 
         result.data.tasks.forEach((element) => {
-            const newDate = new Date(element.duedate);
+            const newDate = new Date(element.duedate).toLocaleDateString();
             element.duedate = newDate;
         });
         return result.data.tasks;
@@ -22,4 +21,12 @@ const getTasks = async () => {
     }
 };
 
-export { getTasks };
+const finishTask = async (id) => {
+    try {
+        await tasks_api.patch(`/finishTask/${id}`);
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+export { getTasks, finishTask };

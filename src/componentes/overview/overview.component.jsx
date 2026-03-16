@@ -2,13 +2,13 @@ import "./overview.styles.scss";
 
 import OverviewCard from "./overview.card.component";
 
-function Overview() {
+function Overview({ completedCount, pendingCount, overdueCount }) {
     return (
         <>
             <div className="overview">
-                <OverviewCard type="completed" quantity={5} />
-                <OverviewCard type="pending" quantity={6} />
-                <OverviewCard type="overdue" quantity={2} />
+                <OverviewCard type="completed" quantity={completedCount} />
+                <OverviewCard type="pending" quantity={pendingCount} />
+                <OverviewCard type="overdue" quantity={overdueCount} />
             </div>
         </>
     );

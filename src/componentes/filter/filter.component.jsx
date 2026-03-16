@@ -15,7 +15,11 @@ function Filter({ setFilteredTasks, tasks }) {
                 onClick={() => {
                     setActive("Low");
                     setFilteredTasks(
-                        tasks.filter((task) => task.priority === "low"),
+                        tasks.filter(
+                            (task) =>
+                                task.priority === "Low" &&
+                                task.finished === false,
+                        ),
                     );
                 }}
             />
@@ -25,7 +29,11 @@ function Filter({ setFilteredTasks, tasks }) {
                 onClick={() => {
                     setActive("Medium");
                     setFilteredTasks(
-                        tasks.filter((task) => task.priority === "medium"),
+                        tasks.filter(
+                            (task) =>
+                                task.priority === "Medium" &&
+                                task.finished === false,
+                        ),
                     );
                 }}
             />
@@ -35,7 +43,11 @@ function Filter({ setFilteredTasks, tasks }) {
                 onClick={() => {
                     setActive("High");
                     setFilteredTasks(
-                        tasks.filter((task) => task.priority === "high"),
+                        tasks.filter(
+                            (task) =>
+                                task.priority === "High" &&
+                                task.finished === false,
+                        ),
                     );
                 }}
             />
@@ -44,7 +56,9 @@ function Filter({ setFilteredTasks, tasks }) {
                 isActive={active === "All"}
                 onClick={() => {
                     setActive("All");
-                    setFilteredTasks(tasks);
+                    setFilteredTasks(
+                        tasks.filter((task) => task.finished === false),
+                    );
                 }}
             />
         </div>

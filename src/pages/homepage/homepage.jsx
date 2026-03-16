@@ -9,6 +9,7 @@ import "./homepage.styles.scss";
 import { getNotes, createNote } from "../../config/api/notes_api.js";
 
 import { userSelector } from "../../redux/user/userSelector.js";
+import { taskSelector } from "../../redux/tasks/taskSelector.js";
 import { setLoading } from "../../redux/loading/loadingSlice.js";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
@@ -19,6 +20,8 @@ function Homepage() {
     const [noteForm, setNoteForm] = useState(false);
     const [noteValue, setNoteValue] = useState("");
     const [notes, setNotes] = useState([]);
+
+    const tasks = taskSelector();
 
     const dispatch = useDispatch();
 
@@ -77,9 +80,29 @@ function Homepage() {
                 title={`Welcome back, ${first_name}!`}
                 description={"Here's your productivity overview"}
             />
-            <Overview />
+            <Overview
+                completedCount={
+                    tasks.filter((task) => task.finished === true).length
+                }
+                pendingCount={
+                    tasks.filter((task) => task.finished === false).length
+                }
+                overdueCount={
+                    tasks.filter((task) => {
+                        const today = new Date();
+                        today.setHours(0, 0, 0, 0);
+
+                        const due = new Date(task.duedate);
+                        due.setHours(0, 0, 0, 0);
+
+                        return due < today && !task.finished;
+                    }).length
+                }
+            />
             <div className="bottom-container">
-                <Deadline />
+                <Deadline
+                    tasks={tasks.filter((task) => !task.finished).slice(0, 6)}
+                />
                 <QuickNotes
                     notes={notes}
                     setNotes={setNotes}

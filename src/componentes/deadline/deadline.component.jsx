@@ -3,16 +3,9 @@ import DeadlineTask from "./deadline.task.component";
 
 import { useNavigate } from "react-router-dom";
 
-function Deadline() {
+function Deadline({ tasks }) {
     const navigate = useNavigate();
-    const tasks = [
-        { task: "Task 1", duedate: "10/12/2026" },
-        { task: "Task 2", duedate: "11/11/2026" },
-        { task: "Task 3", duedate: "21/03/2026" },
-        { task: "Task 4", duedate: "8/12/2026" },
-        { task: "Task 5", duedate: "1/03/2026" },
-        { task: "Task 6", duedate: "30/08/2026" },
-    ];
+
     return (
         <SpecialBox
             boxname={"Upcoming Deadlines"}
