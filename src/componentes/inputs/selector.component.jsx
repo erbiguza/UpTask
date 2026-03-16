@@ -7,6 +7,7 @@ function Selector({ options, selectedOption, setSelectedOption }) {
                     outline: "none",
                     background: "transparent",
                     width: "100%",
+                    color: "rgb(var(--color-text-primary))",
                 }}
                 value={selectedOption}
                 onChange={(e) => setSelectedOption(e.target.value)}

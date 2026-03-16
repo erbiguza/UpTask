@@ -32,6 +32,7 @@
         background-color: rgba(var(--color-card));
         font-size: 16px;
         border-radius: 5px;
+        color: rgba(var(--color-text-primary));
 
         &:focus {
             border: none;
