@@ -12,7 +12,9 @@ const getTasks = async () => {
         const result = await tasks_api.get("/getTasks");
 
         result.data.tasks.forEach((element) => {
-            const newDate = new Date(element.duedate).toLocaleDateString();
+            const newDate = new Date(element.duedate)
+                .toISOString()
+                .split("T")[0];
             element.duedate = newDate;
         });
         return result.data.tasks;

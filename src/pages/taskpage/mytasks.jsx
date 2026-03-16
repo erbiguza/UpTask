@@ -33,7 +33,7 @@ function MyTasksPage() {
                 dispatch(setLoading(true));
                 const response = await tasks_api.post("/createTask", {
                     task: task,
-                    duedate: date + "T00:00:00",
+                    duedate: date + "T01:00:00",
                     priority: priority,
                 });
                 console.log(response);
@@ -48,6 +48,9 @@ function MyTasksPage() {
             } finally {
                 dispatch(setLoading(false));
                 setAddingTask(false);
+                setPriority("Low");
+                setTask("");
+                setDate("");
             }
         }
     };

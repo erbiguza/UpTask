@@ -2,7 +2,6 @@ import "./protectedroute.scss";
 import { Navigate, Outlet } from "react-router-dom";
 import Header from "../componentes/header/header.component";
 import Sidebar from "../componentes/navbar/navbar.component";
-import Loading from "../componentes/loading/loading.component";
 
 import { loadingSelector } from "../redux/loading/loadingSelector.js";
 import { userSelector } from "../redux/user/userSelector.js";
