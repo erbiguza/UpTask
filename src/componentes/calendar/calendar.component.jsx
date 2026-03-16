@@ -1,6 +1,8 @@
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 
+import "./calendar.styles.scss";
+
 import { taskSelector } from "../../redux/tasks/taskSelector";
 
 function Calendar() {
