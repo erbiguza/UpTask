@@ -1,6 +1,8 @@
 .content {
     margin-top: 75px;
     margin-left: 200px;
+    min-height: calc(100dvh - 75px);
+    background-color: rgb(var(--color-bg));
 }
 
 @media (max-width: 768px) {
@@ -8,5 +10,6 @@
         margin-top: 55px;
         margin-left: 0;
         margin-bottom: 55px;
+        min-height: 100dvh;
     }
 }

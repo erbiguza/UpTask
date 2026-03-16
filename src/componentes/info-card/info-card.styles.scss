@@ -7,6 +7,7 @@
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
     display: flex;
     align-items: center;
+    background-color: rgb(var(--color-card));
 
     .info-type {
         h3 {
@@ -16,5 +17,9 @@
     .info {
         margin-left: auto;
         margin-right: 10px;
+
+        h3 {
+            color: rgb(var(--color-text-primary));
+        }
     }
 }

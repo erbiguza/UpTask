@@ -24,6 +24,7 @@
     --color-bg: 31, 41, 55;
     --color-sidebar: 17, 24, 39;
     --color-card: 55, 65, 81;
+    --color-section: 40, 50, 70;
 
     --color-text-primary: 249, 250, 251;
     --color-text-secondary: 156, 163, 175;
@@ -42,8 +43,8 @@
 }
 
 body {
-    background-color: var(--color-bg);
     font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(var(--color-bg));
 }
 
 ::-webkit-scrollbar {
