@@ -11,11 +11,11 @@ import AppWrapper from "./routes/appwrapper.jsx";
 createRoot(document.getElementById("root")).render(
     <BrowserRouter>
         <Provider store={store}>
-            <StrictMode>
-                <AppWrapper>
+            <AppWrapper>
+                <StrictMode>
                     <App />
-                </AppWrapper>
-            </StrictMode>
+                </StrictMode>
+            </AppWrapper>
         </Provider>
     </BrowserRouter>,
 );
