@@ -1,12 +1,12 @@
 import "./header.styles.scss";
-import logo from "../../assets/images/icons/logo.png";
-import light_mode from "../../assets/images/icons/light_mode.png";
-import dark_mode from "../../assets/images/icons/dark_mode.png";
+import logo from "../../../assets/images/icons/logo.png";
+import light_mode from "../../../assets/images/icons/light_mode.png";
+import dark_mode from "../../../assets/images/icons/dark_mode.png";
 
 import { useNavigate } from "react-router-dom";
-import { darkmodeSelector } from "../../redux/darkmode/darkmodeSelector";
+import { darkmodeSelector } from "../../../redux/darkmode/darkmodeSelector";
 import { useDispatch } from "react-redux";
-import { setDarkMode } from "../../redux/darkmode/darkmodeSlice";
+import { setDarkMode } from "../../../redux/darkmode/darkmodeSlice";
 
 function Header({ user }) {
     const darkmode = darkmodeSelector();

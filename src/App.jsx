@@ -9,7 +9,7 @@ import SettingsPage from "./pages/settingspage/settings.jsx";
 import SignUpPage from "./pages/signup/signuppage.jsx";
 import LogInPage from "./pages/login/loginpage.jsx";
 import ProtectedRoute from "./routes/protectedroute.jsx";
-import Loading from "./componentes/loading/loading.component.jsx";
+import Loading from "./components/layout/loading/loading.component.jsx";
 
 import { useEffect } from "react";
 

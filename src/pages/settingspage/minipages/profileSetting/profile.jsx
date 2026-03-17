@@ -7,8 +7,8 @@ import { clearUser } from "../../../../redux/user/userSlice";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
 
-import InfoCard from "../../../../componentes/info-card/info-card.component";
-import SpecialButton from "../../../../componentes/special-button/special-button.component";
+import InfoCard from "../../../../components/layout/info-card/info-card.component";
+import SpecialButton from "../../../../components/ui/special-button/special-button.component";
 
 function Profile() {
     const dispatch = useDispatch();

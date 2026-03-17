@@ -1,5 +1,5 @@
-import Welcome from "../../componentes/welcome/welcome.component";
-import Calendar from "../../componentes/calendar/calendar.component";
+import Welcome from "../../components/layout/welcome/welcome.component";
+import Calendar from "../../components/layout/calendar/calendar.component";
 
 function CalendarPage() {
     return (

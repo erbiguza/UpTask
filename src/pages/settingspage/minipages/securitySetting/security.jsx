@@ -1,14 +1,14 @@
 import "./security.styles.scss";
 
-import DropdownSettingCard from "../../../../componentes/setting-card/dropdown-setting-card.component";
-import NormalSettingCard from "../../../../componentes/setting-card/normal-setting-card.component.jsx";
-import PasswordInput from "../../../../componentes/inputs/password-input.component";
+import DropdownSettingCard from "../../../../components/layout/setting-card/dropdown-setting-card.component";
+import NormalSettingCard from "../../../../components/layout/setting-card/normal-setting-card.component.jsx";
+import PasswordInput from "../../../../components/ui/inputs/password-input.component";
 
 import { useState } from "react";
 import { auth_api } from "../../../../config/api/auth_api";
 import { useDispatch } from "react-redux";
 import { setLoading } from "../../../../redux/loading/loadingSlice.js";
-import SpecialButton from "../../../../componentes/special-button/special-button.component.jsx";
+import SpecialButton from "../../../../components/ui/special-button/special-button.component.jsx";
 
 function Security() {
     const dispatch = useDispatch();

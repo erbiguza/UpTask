@@ -1,7 +1,7 @@
 import "./overview.card.styles.scss";
-import completed from "../../assets/images/icons/completed.png";
-import danger from "../../assets/images/icons/danger.png";
-import pending from "../../assets/images/icons/pending.png";
+import completed from "../../../assets/images/icons/completed.png";
+import danger from "../../../assets/images/icons/danger.png";
+import pending from "../../../assets/images/icons/pending.png";
 
 function OverviewCard({ type, quantity }) {
     let logo, message;

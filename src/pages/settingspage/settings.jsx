@@ -6,8 +6,8 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
 import { useState } from "react";
 
-import SettingsNav from "../../componentes/settings-nav/settings-nav.component";
-import Welcome from "../../componentes/welcome/welcome.component";
+import SettingsNav from "../../components/layout/settings-nav/settings-nav.component";
+import Welcome from "../../components/layout/welcome/welcome.component";
 import Profile from "./minipages/profileSetting/profile";
 import Security from "./minipages/securitySetting/security";
 import Appearance from "./minipages/appearanceSetting/appearance";

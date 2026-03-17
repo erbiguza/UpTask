@@ -1,16 +1,16 @@
 import { useState } from "react";
 import "./task.styles.scss";
-import OverlayBox from "../overlay-box/overlaybox.component";
-import NormalInput from "../inputs/normal-input.component";
-import DateInput from "../inputs/date-input.component";
-import Selector from "../inputs/selector.component";
+import OverlayBox from "../../ui/overlay-box/overlaybox.component";
+import NormalInput from "../../ui/inputs/normal-input.component";
+import DateInput from "../../ui/inputs/date-input.component";
+import Selector from "../../ui/inputs/selector.component";
 
-import { tasks_api } from "../../config/api/tasks_api";
+import { tasks_api } from "../../../config/api/tasks_api";
 
 import { useDispatch } from "react-redux";
-import { setLoading } from "../../redux/loading/loadingSlice";
-import { taskSelector } from "../../redux/tasks/taskSelector";
-import { setTasks } from "../../redux/tasks/taskSlice";
+import { setLoading } from "../../../redux/loading/loadingSlice";
+import { taskSelector } from "../../../redux/tasks/taskSelector";
+import { setTasks } from "../../../redux/tasks/taskSlice";
 
 function Task({ task, duedate, priority, id, deleteTask, done }) {
     const dispatch = useDispatch();

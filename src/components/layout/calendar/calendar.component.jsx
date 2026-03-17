@@ -3,7 +3,7 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 
 import "./calendar.styles.scss";
 
-import { taskSelector } from "../../redux/tasks/taskSelector";
+import { taskSelector } from "../../../redux/tasks/taskSelector";
 
 function Calendar() {
     const tasks = taskSelector();

@@ -2,11 +2,11 @@ import "./cropImage.styles.scss";
 import Cropper from "react-cropper";
 import "cropperjs/dist/cropper.css";
 import { useRef } from "react";
-import { uploadImage } from "../../config/api/profilePic_api";
-import { getUser } from "../../config/api/auth_api";
+import { uploadImage } from "../../../config/api/profilePic_api";
+import { getUser } from "../../../config/api/auth_api";
 import { useDispatch } from "react-redux";
-import { setLoading } from "../../redux/loading/loadingSlice";
-import { setUser } from "../../redux/user/userSlice";
+import { setLoading } from "../../../redux/loading/loadingSlice";
+import { setUser } from "../../../redux/user/userSlice";
 
 function CropImage({ image, close }) {
     const cropperRef = useRef(null);

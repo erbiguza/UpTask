@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./dropdown-setting-card.styles.scss";
 
-import arrow from "../../assets/images/icons/arrow.png";
+import arrow from "../../../assets/images/icons/arrow.png";
 
 function DropdownSettingCard({ title, description, children }) {
     const [active, setActive] = useState(false);

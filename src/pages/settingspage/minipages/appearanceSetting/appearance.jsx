@@ -2,11 +2,11 @@ import "./appearance.styles.scss";
 
 import { getDefaultPics } from "../../../../config/api/profilePic_api";
 
-import DropdownSettingCard from "../../../../componentes/setting-card/dropdown-setting-card.component";
-import NormalSettingCard from "../../../../componentes/setting-card/normal-setting-card.component";
-import ProfilesDisplay from "../../../../componentes/profilesDisplay/profilesDisplay.component";
-import SpecialButton from "../../../../componentes/special-button/special-button.component";
-import CropImage from "../../../../componentes/cropImage/cropImage.component";
+import DropdownSettingCard from "../../../../components/layout/setting-card/dropdown-setting-card.component";
+import NormalSettingCard from "../../../../components/layout/setting-card/normal-setting-card.component";
+import ProfilesDisplay from "../../../../components/layout/profilesDisplay/profilesDisplay.component";
+import SpecialButton from "../../../../components/ui/special-button/special-button.component";
+import CropImage from "../../../../components/layout/cropImage/cropImage.component";
 
 import { pic_apis } from "../../../../config/api/profilePic_api";
 

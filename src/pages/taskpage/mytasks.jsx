@@ -1,12 +1,12 @@
 import "./mytasks.styles.scss";
 
-import Welcome from "../../componentes/welcome/welcome.component";
-import Filter from "../../componentes/filter/filter.component";
-import MyTasks from "../../componentes/tasks/mytasks.component";
-import OverlayBox from "../../componentes/overlay-box/overlaybox.component";
-import NormalInput from "../../componentes/inputs/normal-input.component";
-import DateInput from "../../componentes/inputs/date-input.component";
-import Selector from "../../componentes/inputs/selector.component";
+import Welcome from "../../components/layout/welcome/welcome.component";
+import Filter from "../../components/layout/filter/filter.component";
+import MyTasks from "../../components/layout/tasks/mytasks.component";
+import OverlayBox from "../../components/ui/overlay-box/overlaybox.component";
+import NormalInput from "../../components/ui/inputs/normal-input.component";
+import DateInput from "../../components/ui/inputs/date-input.component";
+import Selector from "../../components/ui/inputs/selector.component";
 
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";

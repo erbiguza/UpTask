@@ -1,7 +1,7 @@
-import SpecialBox from "../specialbox/specialbox.component";
+import SpecialBox from "../../ui/specialbox/specialbox.component";
 import Note from "./note.component";
 
-import { notes_api } from "../../config/api/notes_api";
+import { notes_api } from "../../../config/api/notes_api";
 
 function QuickNotes({ notes, setNotes, onclick }) {
     const deleteNote = (id) => {

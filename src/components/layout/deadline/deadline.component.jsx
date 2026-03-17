@@ -1,4 +1,4 @@
-import SpecialBox from "../specialbox/specialbox.component";
+import SpecialBox from "../../ui/specialbox/specialbox.component";
 import DeadlineTask from "./deadline.task.component";
 
 import { useNavigate } from "react-router-dom";

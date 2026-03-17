@@ -1,6 +1,6 @@
 import "./overlaybox.styles.scss";
 
-import SpecialButton from "../special-button/special-button.component.jsx";
+import SpecialButton from "../special-button/special-button.component";
 
 function OverlayBox({ children, title, onSend, onClose, buttonName }) {
     return (

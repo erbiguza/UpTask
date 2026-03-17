@@ -9,9 +9,9 @@ import logo from "../../assets/images/icons/logo.png";
 import userphoto from "../../assets/images/inputs/user.png";
 import emailphoto from "../../assets/images/inputs/email.png";
 
-import NormalInput from "../../componentes/inputs/normal-input.component";
-import PasswordInput from "../../componentes/inputs/password-input.component";
-import SpecialButton from "../../componentes/special-button/special-button.component";
+import NormalInput from "../../components/ui/inputs/normal-input.component";
+import PasswordInput from "../../components/ui/inputs/password-input.component";
+import SpecialButton from "../../components/ui/special-button/special-button.component";
 
 import { userSelector } from "../../redux/user/userSelector.js";
 import { useDispatch } from "react-redux";
@@ -87,6 +87,7 @@ function SignUpPage() {
                     </div>
                     <form className="form" onSubmit={handleSignup}>
                         <NormalInput
+                            lightmode={true}
                             icon={userphoto}
                             placeholder={"Full Name"}
                             type={"fullname"}
@@ -96,6 +97,7 @@ function SignUpPage() {
                             }}
                         />
                         <NormalInput
+                            lightmode={true}
                             icon={emailphoto}
                             placeholder={"Email"}
                             type={"email"}
@@ -105,6 +107,7 @@ function SignUpPage() {
                             }}
                         />
                         <PasswordInput
+                            lightmode={true}
                             placeholder={"Password"}
                             value={password}
                             onchange={(e) => {
@@ -112,6 +115,7 @@ function SignUpPage() {
                             }}
                         />
                         <PasswordInput
+                            lightmode={true}
                             placeholder={"Confirm Password"}
                             value={confirmPassword}
                             onchange={(e) => {

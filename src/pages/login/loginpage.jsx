@@ -8,9 +8,9 @@ import { NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/images/icons/logo.png";
 import emailphoto from "../../assets/images/inputs/email.png";
 
-import NormalInput from "../../componentes/inputs/normal-input.component";
-import PasswordInput from "../../componentes/inputs/password-input.component";
-import SpecialButton from "../../componentes/special-button/special-button.component";
+import NormalInput from "../../components/ui/inputs/normal-input.component";
+import PasswordInput from "../../components/ui/inputs/password-input.component";
+import SpecialButton from "../../components/ui/special-button/special-button.component";
 
 import { userSelector } from "../../redux/user/userSelector.js";
 import { useDispatch } from "react-redux";
@@ -61,6 +61,7 @@ function LogInPage() {
                     </div>
                     <form className="form" onSubmit={handleLogin}>
                         <NormalInput
+                            lightmode={true}
                             icon={emailphoto}
                             placeholder={"Email"}
                             type={"email"}
@@ -70,6 +71,7 @@ function LogInPage() {
                             }}
                         />
                         <PasswordInput
+                            lightmode={true}
                             placeholder={"Password"}
                             value={password}
                             onchange={(e) => {

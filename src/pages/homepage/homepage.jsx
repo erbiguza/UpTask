@@ -1,8 +1,8 @@
-import Deadline from "../../componentes/deadline/deadline.component";
-import Overview from "../../componentes/overview/overview.component";
-import QuickNotes from "../../componentes/quicknotes/quicknotes.component";
-import Welcome from "../../componentes/welcome/welcome.component";
-import NormalInput from "../../componentes/inputs/normal-input.component.jsx";
+import Deadline from "../../components/layout/deadline/deadline.component";
+import Overview from "../../components/layout/overview/overview.component";
+import QuickNotes from "../../components/layout/quicknotes/quicknotes.component";
+import Welcome from "../../components/layout/welcome/welcome.component";
+import NormalInput from "../../components/ui/inputs/normal-input.component.jsx";
 
 import "./homepage.styles.scss";
 
@@ -13,7 +13,7 @@ import { taskSelector } from "../../redux/tasks/taskSelector.js";
 import { setLoading } from "../../redux/loading/loadingSlice.js";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import OverlayBox from "../../componentes/overlay-box/overlaybox.component.jsx";
+import OverlayBox from "../../components/ui/overlay-box/overlaybox.component.jsx";
 
 function Homepage() {
     const { first_name } = userSelector();

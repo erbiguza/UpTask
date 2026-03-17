@@ -1,15 +1,15 @@
 import "./navbar.styles.scss";
-import logoutimg from "../../assets/images/icons/logout.png";
+import logoutimg from "../../../assets/images/icons/logout.png";
 
-import { logout } from "../../config/api/auth_api.js";
+import { logout } from "../../../config/api/auth_api.js";
 import { useNavigate, useLocation } from "react-router";
 
 import SidebarOption from "./navbar.option.component.jsx";
-import { options } from "../../config/navlinks.js";
+import { options } from "../../../config/navlinks.js";
 
-import { clearUser } from "../../redux/user/userSlice.js";
+import { clearUser } from "../../../redux/user/userSlice.js";
 import { useDispatch } from "react-redux";
-import { setLoading } from "../../redux/loading/loadingSlice.js";
+import { setLoading } from "../../../redux/loading/loadingSlice.js";
 
 function Sidebar() {
     const location = useLocation();

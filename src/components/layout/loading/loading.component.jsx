@@ -1,7 +1,7 @@
 import "./loading.styles.scss";
 
 import { ClipLoader } from "react-spinners";
-import { loadingSelector } from "../../redux/loading/loadingSelector.js";
+import { loadingSelector } from "../../../redux/loading/loadingSelector.js";
 
 function Loading() {
     const loading = loadingSelector();

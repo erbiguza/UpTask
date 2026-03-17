@@ -13,7 +13,11 @@ function Selector({ options, selectedOption, setSelectedOption }) {
                 onChange={(e) => setSelectedOption(e.target.value)}
             >
                 {options.map((option) => (
-                    <option key={option} value={option}>
+                    <option
+                        key={option}
+                        value={option}
+                        style={{ color: "rgb(0, 0, 0)" }}
+                    >
                         {option}
                     </option>
                 ))}

@@ -1,11 +1,11 @@
-import SpecialBox from "../specialbox/specialbox.component";
+import SpecialBox from "../../ui/specialbox/specialbox.component";
 import Task from "./task.component";
 import TaskHead from "./taskhead.component";
 
-import { tasks_api } from "../../config/api/tasks_api";
-import { setTasks } from "../../redux/tasks/taskSlice";
+import { tasks_api } from "../../../config/api/tasks_api";
+import { setTasks } from "../../../redux/tasks/taskSlice";
 import { useDispatch } from "react-redux";
-import { taskSelector } from "../../redux/tasks/taskSelector";
+import { taskSelector } from "../../../redux/tasks/taskSelector";
 
 function MyTasks({ tasks }) {
     const dispatch = useDispatch();
